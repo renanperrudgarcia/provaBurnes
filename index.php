@@ -31,7 +31,7 @@
 	
 
 	
-
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
 	<script type="text/javascript" src="Js/bootstrap.min.js"></script>

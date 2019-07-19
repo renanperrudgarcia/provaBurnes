@@ -18,8 +18,8 @@ include"../verificalogin.php";
     
     <form name="formsenha" method="post" action="salvar/novasenha" data-parsley-validate>
 				
-                <label for="senha">Digite sua senha: </label>
-				<input type="password" name="senha" class="input" placeholder="Digite sua senha"
+                <label for="senha1">Digite sua senha: </label>
+				<input type="password" name="senha1" class="input" placeholder="Digite sua senha"
 				required
 				data-parsley-required-message="<i class='fas fa-info-circle'></i> Por favor preencha este campo">
                 
@@ -40,21 +40,35 @@ include"../verificalogin.php";
                 <br>
                 <br>
 
-				<button type="submit" class="btn btn-danger">
+				<button type="submit" class="btn btn-danger" onclick="return validarSenha()">
 					<i class="fas fa-check"></i> 
 					alterar senha
 				</button>
             </form>
             
-            <?php
             
-           /* if( !password_verify ($senha, $dados->senha) ){
-       
-                $msg = "senha invalida";
-                mensagem($msg);
-            }else{
-                echo "<script>location.href='cadastros/calculo'</script>";
+            
+            <script type="text/javascript">
+         function validarSenha(){
+
+            var novasenha = formsenha.novasenha.value;
+            var redigite = formsenha.redigite.value;
+            if(redigite== "" || redigite.length <= 3){
+                alert ('Preencha o campo da senha com no minimo 4 caracteres');
+                formsenha.redigite.focus();
+                return false;
             }
-        ?>
-            ?>*/
+    
+            if(novasenha == "" || novasenha.length <= 3){
+                alert ('Preencha o campo da senha com no minimo 4 caracteres');
+                formsenha.novasenha.focus();
+                return false;
+            }
+            if(novasenha != redigite){
+                alert (' Senhas estao diferentes');
+                formsenha.novasenha.focus();
+                return false;
+            }
+        }
+         </script>
             

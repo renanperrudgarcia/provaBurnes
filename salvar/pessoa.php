@@ -36,9 +36,9 @@ include"../verificalogin.php";
 
         //insert
         $sql = "insert into pessoa 
-        (id, nome,sexo, datanascimento, login, senha, tipo, foto,empresa_id)
+        (id, nome,sexo, datanascimento, login, senha, tipo,empresa_id)
         values 
-        (NULL, :nome, :sexo, :datanascimento, :login, :senha, :tipo, :capa, :empresa_id)";
+        (NULL, :nome, :sexo, :datanascimento, :login, :senha, :tipo, :empresa_id)";
 
         $consulta = $pdo->prepare( $sql );
         $consulta->bindValue(":nome",$nome);
@@ -47,11 +47,10 @@ include"../verificalogin.php";
         $consulta->bindValue(":login",$login);
         $consulta->bindValue(":senha",$senha);
         $consulta->bindValue(":tipo",$tipo);
-        $consulta->bindValue(":capa",$capa);
         $consulta->bindValue(":empresa_id",$empresa_id);
     } else {
         //update
-        $sql = "update pessoa  set nome=:nome, sexo = :sexo, datanascimento = :datanascimento, login = :login, senha = :senha, tipo = :tipo, capa=:capa,empresa = :empresa where id =:id limit 1" ; 
+        $sql = "update pessoa  set nome=:nome, sexo = :sexo, datanascimento = :datanascimento, login = :login, senha = :senha, tipo = :tipo,empresa = :empresa where id =:id limit 1" ; 
 
         $consulta = $pdo->prepare( $sql );
         $consulta->bindValue(":nome",$nome);
@@ -60,7 +59,6 @@ include"../verificalogin.php";
         $consulta->bindValue(":login",$login);
         $consulta->bindValue(":senha",$senha);
         $consulta->bindValue(":tipo",$tipo);
-        $consulta->bindValue(":capa",$capa);
         $consulta->bindValue(":empresa_id",$empresa_id);
         $consulta->bindValue(":id",$id);
 
@@ -72,24 +70,7 @@ include"../verificalogin.php";
 
 			
 
-        if ( !empty ( $_FILES["capa"]["name"] ) ) {
-            echo $_FILES["capa"]["name"];
-            //copiar o arquivo para a pasta
-
-            if ( !copy( $_FILES["capa"]["tmp_name"], 
-                "foto/".$_FILES["capa"]["name"] )) {
-
-                $msg = "Erro ao copiar foto";
-                mensagem( $msg );
-            }
-
-            //echo $capa;
-
-            $pastaFotos = "foto/";
-            $imagem = $_FILES["capa"]["name"];
-
-            redimensionarImagem($pastaFotos,$imagem,$capa);
-        }
+       
         
         //salvar no banco
         $pdo->commit();
@@ -98,11 +79,8 @@ include"../verificalogin.php";
         sucesso( $msg, "listar/pessoa" );
 
     } else {
-        //erro do sql
-        echo $consulta->errorInfo()[2];
-        exit;
-        $msg = "Erro ao salvar quadrinho";
-        mensagem( $msg );
+        $msg ="Erro ao inserir/atualizar registro !";
+        mensagem($msg);
     }
 
 

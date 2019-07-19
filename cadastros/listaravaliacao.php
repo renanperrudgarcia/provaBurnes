@@ -5,7 +5,7 @@
 
  ///$calculo = new Calc;
  
- $id=$data=$peso=$altura='';
+// $id=$data=$peso=$altura='';
 
 
 
@@ -16,24 +16,14 @@
 		
 	</pre>
 	<div class="text-center- danger mt-5 "></div>
-	<h1 class="text-center">Avaliações
-	<div class="float-right">
-			<a href="cadastros/listaravaliacao" class="btn btn-info">
-			<i class="fas fa-search"></i>  Listar
-			</a>
-			
-	</div>
+	<h1 class="text-center">Selecione Cliente
+	
 			</h1>
 	
 
-<form  name="cadastros"action="salvar/calculo" method="post">
+<form  name="cadastros"action="listar/avaliacoes" method="post">
 	
-	<div class="form-grup">
-			<label>ID:</label>
-			<input type="text" name="id" value="<?=$id?>" class="form-control " required readonly >
-	</div>
-
-	<br>
+	
 			
 	<?php
 			if ($_SESSION["pessoa"]["tipo"] == 'funcionario') {
@@ -79,28 +69,9 @@
 	?>
 
 		<br>
-	<div class="form-grup">
-		<label>Peso:</label>
-		<input type="text" name="peso" value="<?=$peso?>" class="form-control " required >
-	</div>
-	<br>	
-	<div class="form-grup">
-		<label>Altura: </label>
-		<input type="text" name="altura" id="altura" value="<?=$altura?>" class="form-control " required data-mask="9.99"  >
-	</div>
-	<div class="form-grup d-none">
-					<label for="avaliador">avaliador: </label>
-						<select name="avaliador" id="avaliador" class="form-control" required data-parsley-required-message="Selecione um personagem" readonly>
-								<option value="<?=$idavaliador;?>"><?=$_SESSION["pessoa"]["nome"];?></option>
-								
-								
-								</option>
-							</select>
-					
-	</div>
+	
 	<br>
-	<br>
-	<button type="submit" name="enviar" class="btn btn-success">Calcular Imc</button>
+	<button type="submit" name="enviar" class="btn btn-success">Listar </button>
          
  
 

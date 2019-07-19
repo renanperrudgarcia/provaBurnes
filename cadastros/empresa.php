@@ -5,7 +5,9 @@
 		include "verificalogin.php";
 	else
 		include"../verificalogin.php";
-    $id=$nomeFantasia=$razao=$cnpj='';
+	$id=$nomeFantasia=$razao=$cnpj='';
+	
+	
     
     if(isset($p[2] ) ){
         $sql="select * from empresa where id= ? limit 1";
@@ -21,7 +23,7 @@
         
 
     }
-	
+		
 		?>
 	<div class="container">
 		<div class="coluna">
@@ -61,7 +63,7 @@
     </div>
     
 
-    <script type="text/javascript">
+   
 
    
     <script type="text/javascript">

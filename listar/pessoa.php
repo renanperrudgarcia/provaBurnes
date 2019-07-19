@@ -4,7 +4,7 @@
     include "verificalogin.php";
     else
     include"../verificalogin.php";
-    if ($_SESSION["pessoa"]["tipo"] == 'f') {
+    if ($_SESSION["pessoa"]["tipo"] == 'funcionario') {
         $entrada="";
         
     }else{
@@ -28,12 +28,12 @@
 				<thead>
 					<tr>
 						<td width="5%">ID</td>
-						<td width="25%">Nome</td>
+						<td width="20%">Nome</td>
                         <td width="7%">Sexo</td>
                         <td width="10%">Data Nascimento</td>
                         <td width="10%">login</td>
                         <td width="10">tipo</td> 
-                        <td width="20%">Empresa</td>
+                        <td width="15%">Empresa</td>
                        
                        
 						<td style="display:<?=$entrada;?>">Opções</td>
@@ -42,7 +42,7 @@
 			<tbody>
             <?php
 					
-                    if ($_SESSION["pessoa"]["tipo"] == 'f') {
+                    if ($_SESSION["pessoa"]["tipo"] == 'funcionario') {
                         
                         $sql = "select p.id,p.nome,p.sexo, date_format(p.datanascimento, '%d/%m/%Y') datanascimento,p.login,p.tipo,e.nomeFantasia from pessoa as p INNER join empresa as e
                         on p.empresa_id = e.id

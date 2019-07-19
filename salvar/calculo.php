@@ -22,7 +22,7 @@ include"../verificalogin.php";
 				$$key  = trim($value);
 			} 
         }
-      
+        $imc= $peso/($altura*$altura);
 
     
 
@@ -39,8 +39,8 @@ include"../verificalogin.php";
        
     }
     if($consulta->execute()){
-        $msg = "registro inserido com sucesso!";
-        $link = "listar/calculo1";
+        $msg = "Avaliacao realizada com sucesso!";
+        $link = "listar/calculo";
         sucesso($msg, $link);
     }else{
         $msg ="Erro ao inserir/atualizar registro !";

@@ -27,7 +27,7 @@
 
 			//login e a senha foram preenchidos
 			//buscar o usuario no banco
-			$sql = "select id, nome, login, senha,tipo, foto
+			$sql = "select id, nome, login, senha,tipo
 				from pessoa
 				where login = ? 
 				limit 1";
@@ -53,9 +53,8 @@
 						"id"=>$dados->id,
 						"nome"=>$dados->nome,
 						"login"=>$dados->login,
-						"tipo"=>$dados->tipo,
-						"foto"=>$dados->foto);
-					print_r( $_SESSION["pessoa"]);	
+						"tipo"=>$dados->tipo);
+					//print_r( $_SESSION["pessoa"]);	
 					echo "<script>location.href='cadastros/calculo'</script>";
 				}
 				

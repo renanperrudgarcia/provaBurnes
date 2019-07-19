@@ -14,12 +14,12 @@ body {
 }
 
 .bg {
-    background: #fff;
+    background: rgba(185, 143, 143, 0.829);
     height: 100%;
 }
 
 .navbar {
-    background: #00B0EF;
+    background: rgb(228, 138, 115);
     box-shadow: 2px 2px 30px #ccc;
 }
 
@@ -58,7 +58,7 @@ iframe.img-thumbnail {
 main {
     width: 100%;
     min-height: 100%;
-    background: #f1f1f1;
+    background: #706262;
     padding-top: 120px;
 }
 

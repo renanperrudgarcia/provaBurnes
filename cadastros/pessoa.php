@@ -63,8 +63,8 @@
 			<label for="sexo">Sexo:</label>
 			<select  name="sexo" id="sexo" class="form-control" required  data-parsley-required-message="Preencha este campo">
             <option value=""></option>
-            <option value="m">Masculino</option>
-            <option value="f">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
             </select>
             </div>
 			
@@ -112,24 +112,17 @@
             <label for="tipo">Tipo:</label>
 			<select  name="tipo" id="sexo" class="form-control" required  data-parsley-required-message="Selecione uma Opção">
             <option value=""></option>
-            <option value="f">Funcionario</option>
-            <option value="c">Cliente</option>
+            <option value="funcionario">Funcionario</option>
+            <option value="cliente">Cliente</option>
             </select>
             </div>
 			
-            <br>
-            <div class="form-grup">
-			<label for="capa">Foto da Capa (JPG):</label>
-			<input type="file" name="capa"
-			class="form-control"
-			
-			accept=".jpg">
-            </div>
+           
 			
             <br>
-            <div class="form-grup">
             
-            <br>
+            
+            <div class="form-grup">
 			<label for="empresa_id">Empresa:</label>
 			<select name="empresa_id" id="empresa_id"
 			class="form-control"
@@ -143,9 +136,12 @@
 					$campo = "nomeFantasia";
 					//função para buscar os tipos
 					carregarOpcoes($tabela,$campo,$pdo);
-					//$pdo - conexao com o banco de dados
+                    //$pdo - conexao com o banco de dados
+                    
+                    
 				?>
             </select>
+            </div>
         
             <br>
             
@@ -163,7 +159,7 @@
     $("#sexo").val(<?=$sexo;?>);
     $("#tipo").value(<?=$tipo;?>);
     
-    $("#empresa_id").val(<?=$empresa_id;?>);
+    $("#nome").val(<?=$empresa_id;?>);
    
 
 	function validaCpf(cpf) {

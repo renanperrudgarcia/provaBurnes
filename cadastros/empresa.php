@@ -27,7 +27,7 @@
 		?>
 	<div class="container">
 		<div class="coluna">
-			<h1 class="float-left"> Cadastro de Empresas</h1>
+			<h1 class="float-left"> Cadastro de Empresa</h1>
 			<div class="float-right">
 			
 			<a href="listar/empresa" class="btn btn-info">

@@ -72,10 +72,10 @@
                         <td>$nomeFantasia</td>
                         
                         <td>
-                        <a href='cadastros/pessoa/$id'class='btn btn-success'>
+                        <a href='cadastros/pessoa/$id'class='btn btn-success m-0 ml-3'>
                         <i class='fas fa-edit'></i>
                         </a>
-                        <a href='javascript:excluir($id)'class='btn btn-danger'>
+                        <a href='javascript:excluir($id)'class='btn btn-danger m-0 ml-2'>
                         <i class='fas fa-trash'>
                         </i>
                         </a>

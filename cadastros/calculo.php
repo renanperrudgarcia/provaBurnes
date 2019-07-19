@@ -44,6 +44,7 @@ $action='';
 			<a href="listar/calculo" class="btn btn-info">
 			<i class="fas fa-search"></i>  Listar
 			</a>
+			
 	</div>
 			</h1>
 	<?php
@@ -104,7 +105,7 @@ $action='';
 		}
 	?>
 
-
+		<br>
 	<div class="form-grup">
 		<label>Peso:</label>
 		<input type="text" name="peso" value="<?=$peso?>" class="form-control " required >
@@ -134,7 +135,7 @@ if (!empty($imc)){
 	</div>
 		
 	
-	<div class="form-grup">
+	<div class="form-grup d-none">
 					<label for="avaliador">avaliador: </label>
 						<select name="avaliador" id="avaliador" class="form-control" required data-parsley-required-message="Selecione um personagem" readonly>
 								<option value="<?=$idavaliador;?>"><?=$_SESSION["pessoa"]["nome"];?></option>

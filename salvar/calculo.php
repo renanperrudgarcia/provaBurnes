@@ -40,7 +40,7 @@ include"../verificalogin.php";
     }
     if($consulta->execute()){
         $msg = "registro inserido com sucesso!";
-        $link = "listar/calculo";
+        $link = "listar/calculo1";
         sucesso($msg, $link);
     }else{
         $msg ="Erro ao inserir/atualizar registro !";

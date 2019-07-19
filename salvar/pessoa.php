@@ -26,6 +26,7 @@ include"../verificalogin.php";
         }
         $senha = password_hash($senha, PASSWORD_DEFAULT);
         $datanascimento = formataData( $datanascimento );
+       // var_dump($_POST);
         
     
     if ( empty ( $id ) ) {
@@ -94,7 +95,7 @@ include"../verificalogin.php";
         $pdo->commit();
 
         $msg = "Registro inserido com sucesso!";
-        sucesso( $msg, "listar/quadrinho" );
+        sucesso( $msg, "listar/pessoa" );
 
     } else {
         //erro do sql

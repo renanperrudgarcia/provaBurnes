@@ -17,7 +17,7 @@ include"../verificalogin.php";
 			
 			//$key - nome do campo
             //$value - valor do campo (digitado)
-            echo"<p>$key $value</P>";
+           // echo"<p>$key $value</P>";
 			if(isset($_POST[$key])){
 				$$key  = trim($value);
 			} 
